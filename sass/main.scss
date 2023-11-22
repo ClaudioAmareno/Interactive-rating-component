@@ -1,0 +1,464 @@
+@import './math';
+@import './variables';
+@import './reset';
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: $Font-style;
+	background-color: $Very-Dark-Blue;
+}
+
+// Main card
+
+.thank-card {
+	display: none;
+}
+
+.main-card,
+.thank-card {
+	padding: rem(0) rem(25);
+	margin: rem(0) rem(25);
+	border-radius: rem(15);
+    background-color: $Dark-Blue
+}
+
+.star-wrapper {
+	padding-top: rem(25);
+	margin-bottom: rem(18);
+}
+
+.star-field {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: rem(40);
+	height: rem(40);
+	background-color: $Circle;
+	border-radius: 50%;
+
+	&__img {
+		transform: scale(0.9);
+	}
+}
+
+.main-text-wrapper {
+	margin-bottom: rem(15);
+	&__heading {
+		color: $White;
+		margin-bottom: rem(11);
+		font-size: rem(24);
+		font-weight: 700;
+	}
+
+	&__text {
+		font-size: rem(14);
+		line-height: rem(20);
+		color: $Light-Grey;
+		margin-bottom: rem(30);
+	}
+}
+
+.btns-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: rem(23);
+
+	&__btn {
+		height: rem(43);
+		width: rem(43);
+		border-radius: 50%;
+		border: none;
+		background-color: $Circle;
+		color: $White;
+		transition: background-color 0.4s, color 0.4s;
+		cursor: pointer;
+	}
+
+	&__btn:hover {
+		background-color: $Medium-Grey;
+		color: $Dark-Blue;
+	}
+
+	&__btn:focus {
+		background-color: $Orange;
+		color: $White;
+	}
+}
+
+.button-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: rem(30);
+}
+
+.submit-button {
+	padding: rem(15) rem(110);
+	background-color: $Orange;
+	color: $White;
+	border-radius: rem(35);
+	border: none;
+	text-transform: uppercase;
+	letter-spacing: rem(2);
+	transition: background-color 0.4s, color 0.4s;
+	cursor: pointer;
+}
+
+.submit-button:hover {
+	color: $Orange;
+	background-color: $White;
+}
+
+// Thanks card
+
+.img-wrapper {
+	display: flex;
+	justify-content: center;
+	&__photo {
+		padding-top: rem(25);
+		margin-bottom: rem(21);
+		transform: scale(0.9);
+	}
+}
+
+.sumup-wrapper {
+	text-align: center;
+}
+
+.field {
+	padding: rem(6) rem(0);
+	margin: rem(0) rem(55) rem(28) rem(55);
+	border-radius: rem(20);
+	background-color: $Circle;
+
+	&__text {
+		font-size: rem(14);
+		color: $Orange;
+	}
+}
+
+.thank-text-wrapper {
+	text-align: center;
+
+	&__heading {
+		margin-bottom: rem(10);
+		font-size: rem(24);
+		color: $White;
+		letter-spacing: rem(0.4);
+	}
+
+	&__text {
+		padding-bottom: rem(40);
+		font-size: rem(14);
+		color: $Light-Grey;
+		line-height: rem(22);
+	}
+}
+
+@media (min-width: $screen-sm) {
+	.main-card {
+		padding: rem(0) rem(40);
+	}
+
+	.star-wrapper {
+		padding-top: rem(25);
+		margin-bottom: rem(18);
+	}
+
+	.star-field {
+		width: rem(50);
+		height: rem(50);
+
+		&__img {
+			transform: scale(1);
+		}
+	}
+
+	.main-text-wrapper {
+		margin-bottom: rem(15);
+		&__heading {
+			margin-bottom: rem(20);
+			text-align: center;
+			font-size: rem(28);
+		}
+		&__text {
+			font-size: rem(16.5);
+			line-height: rem(25);
+			margin-bottom: rem(40);
+		}
+	}
+
+	.btns-wrapper {
+		margin-bottom: rem(40);
+
+		&__btn {
+			height: rem(50);
+			width: rem(50);
+			font-size: rem(16);
+		}
+	}
+
+	.submit-button {
+		padding: rem(15) rem(160);
+	}
+
+	// Thanks card
+	.img-wrapper {
+		&__photo {
+			padding-top: rem(30);
+			margin-bottom: rem(25);
+			transform: scale(1);
+		}
+	}
+
+	.field {
+		margin: rem(0) rem(120) rem(28) rem(120);
+
+		&__text {
+			font-size: rem(16);
+		}
+	}
+
+	.thank-text-wrapper {
+		&__heading {
+			margin-bottom: rem(10);
+			font-size: rem(26);
+			letter-spacing: rem(0.4);
+		}
+
+		&__text {
+			padding-bottom: rem(40);
+			font-size: rem(15);
+			line-height: rem(22);
+		}
+	}
+}
+
+@media (min-width: $screen-md) {
+	.main-card,
+	.thank-card {
+		margin: rem(0) rem(140);
+	}
+	.main-text-wrapper {
+		margin-bottom: rem(15);
+		&__heading {
+			font-size: rem(30);
+		}
+
+		&__text {
+			font-size: rem(18);
+			letter-spacing: rem(0.6);
+			margin-bottom: rem(40);
+		}
+	}
+
+	.btns-wrapper {
+		margin-bottom: rem(40);
+
+		&__btn {
+			height: rem(55);
+			width: rem(55);
+			font-size: rem(16);
+		}
+	}
+
+	.submit-button {
+		padding: rem(15) rem(100);
+	}
+}
+
+@media (min-width: $screen-lg) {
+	.main-card,
+	.thank-card {
+		padding: rem(0) rem(40);
+		margin: rem(0) rem(160);
+	}
+	.main-text-wrapper {
+		margin-bottom: rem(15);
+		&__heading {
+			font-size: rem(34);
+		}
+
+		&__text {
+			font-size: rem(20);
+			letter-spacing: rem(0.6);
+			margin-bottom: rem(40);
+		}
+	}
+
+	.btns-wrapper {
+		margin-bottom: rem(40);
+
+		&__btn {
+			height: rem(60);
+			width: rem(60);
+		}
+	}
+
+	.submit-button {
+		padding: rem(15) rem(180);
+		font-size: rem(16);
+	}
+
+	// Thank card
+
+	.img-wrapper {
+		&__photo {
+			padding-top: rem(40);
+			margin-bottom: rem(35);
+			transform: scale(1.1);
+		}
+	}
+
+	.field {
+		margin: rem(0) rem(160) rem(28) rem(160);
+
+		&__text {
+			font-size: rem(18);
+		}
+	}
+
+	.thank-text-wrapper {
+		&__heading {
+			font-size: rem(28);
+		}
+
+		&__text {
+			padding-bottom: rem(40);
+			font-size: rem(16);
+			line-height: rem(25);
+		}
+	}
+}
+
+@media (min-width: $screen-xl) {
+	.main-card,
+	.thank-card {
+		margin: rem(0) rem(280);
+	}
+	.main-text-wrapper {
+		&__text {
+			font-size: rem(19);
+		}
+	}
+
+	.btns-wrapper {
+		margin-bottom: rem(40);
+
+		&__btn {
+			height: rem(55);
+			width: rem(55);
+		}
+	}
+
+	.submit-button {
+		padding: rem(15) rem(180);
+	}
+}
+
+@media (min-width: $screen-xxl) {
+	.main-card,
+	.thank-card {
+		padding: rem(0) rem(38) rem(0) rem(31);
+		margin: rem(0) rem(515);
+		border-radius: rem(30);
+	}
+
+	.star-wrapper {
+		padding-top: rem(35);
+		margin-top: rem(0);
+	}
+
+	.star-field {
+		margin-bottom: rem(35);
+		width: rem(47);
+		height: rem(47);
+
+		&__img {
+			transform: scale(1);
+		}
+	}
+
+	.main-text-wrapper {
+		margin-bottom: rem(15);
+		&__heading {
+			margin-bottom: rem(10);
+			text-align: start;
+			font-size: rem(27);
+			letter-spacing: rem(0.3);
+		}
+		&__text {
+			margin-bottom: rem(25);
+			font-size: rem(15);
+			line-height: rem(25);
+			letter-spacing: rem(0);
+		}
+	}
+
+	.btns-wrapper {
+		margin-bottom: rem(30);
+		&__btn {
+			height: rem(50);
+			width: rem(50);
+			font-size: rem(16);
+		}
+	}
+
+	.button-wrapper {
+		margin-bottom: rem(0);
+	}
+
+	.submit-button {
+		padding: rem(15) rem(135);
+		font-size: rem(14);
+		border-radius: rem(35);
+		letter-spacing: rem(2.5);
+	}
+
+	//Thank card
+
+	.img-wrapper {
+		&__photo {
+			padding-top: rem(5);
+			margin-bottom: rem(35);
+			margin-top: rem(40);
+			transform: scale(1);
+		}
+	}
+
+	.field {
+		margin: rem(0) rem(70) rem(35) rem(77);
+
+		&__text {
+			font-size: rem(15);
+		}
+	}
+
+	.thank-text-wrapper {
+		&__heading {
+			margin-bottom: rem(5);
+			font-size: rem(28);
+			letter-spacing: rem(0.2);
+		}
+
+		&__text {
+			padding-bottom: rem(45);
+			font-size: rem(15);
+			line-height: rem(25);
+		}
+	}
+}
+
+@media (min-width: $my-screen) {
+	.main-card, .thank-card {
+		margin: rem(0) rem(750);
+	}
+
+    .field {
+		margin: rem(0) rem(80) rem(35) rem(80);
+	}
+}
